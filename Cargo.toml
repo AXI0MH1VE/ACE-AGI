@@ -1,0 +1,31 @@
+[package]
+name = "sovereign_cli"
+version = "20.0.0"
+edition = "2021"
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["auto-initialize"] }
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rust_brain = "0.1"
+numpy = "0.20"
+scipy = "0.14"
+qutip = "0.5"
+tabulate = "0.10"
+petgraph = "0.6"
+uuid = { version = "1.0", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+[features]
+agent_orchestration = []
+vqe = []
+quantum = []
+dist = []
+
+[lib]
+name = "sovereign_cli"
+crate-type = ["cdylib"]
+
+[package.metadata.maturin]
+name = "sovereign-cli"

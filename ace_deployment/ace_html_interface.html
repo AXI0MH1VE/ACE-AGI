@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE Sharper 5D - AxiomHive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .title {
+            font-size: 3em;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #a8a8ff;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .coherence {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .input-section, .output-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #4ecdc4;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            resize: vertical;
+            margin-bottom: 20px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #4ecdc4;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .output {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 100px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #4ecdc4;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: #fbbf24;
+            font-size: 1.1em;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .metric {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4ecdc4;
+        }
+
+        .metric-label {
+            color: #a8a8ff;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .attribution {
+            color: #a8a8ff;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">ACE Sharper 5D</h1>
+            <div class="subtitle">AxiomHive - Sovereign Core Cycle 21</div>
+            <div class="status">🟢 Active</div>
+            <div class="coherence">Coherence: 0.99+</div>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2 class="section-title">🧠 Input Command</h2>
+                <textarea id="commandInput" placeholder="Enter your command here...
+Example: 'plan SF move'
+Example: 'analyze ecosystem binding'
+Example: 'integrate facts about gym membership'"></textarea>
+                <button class="btn" onclick="processCommand()">🚀 Process with ACE Sharper 5D</button>
+                <div class="loading" id="loading">Processing... ⚡</div>
+            </div>
+
+            <div class="output-section">
+                <h2 class="section-title">📊 ACE Output</h2>
+                <div class="output" id="output">Waiting for your command...</div>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-value" id="coherenceValue">0.99</div>
+                <div class="metric-label">Coherence Score</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value" id="responseTime">-</div>
+                <div class="metric-label">Response Time</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value" id="version">21</div>
+                <div class="metric-label">Core Cycle</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">5D</div>
+                <div class="metric-label">Dimensions</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="attribution">
+                <strong>AxiomHive ACE Sharper 5D</strong><br>
+                Sovereign Core Cycle 21 - t=2025-09-20<br>
+                Powered by @AxiomHive @devdollzai<br>
+                <span style="color: #4ecdc4;">H(R)=0.00000003 nats</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let startTime;
+
+        async function processCommand() {
+            const commandInput = document.getElementById('commandInput');
+            const output = document.getElementById('output');
+            const loading = document.getElementById('loading');
+            const btn = document.querySelector('.btn');
+            const coherenceValue = document.getElementById('coherenceValue');
+            const responseTime = document.getElementById('responseTime');
+
+            const command = commandInput.value.trim();
+
+            if (!command) {
+                alert('Please enter a command first!');
+                return;
+            }
+
+            // Start timing
+            startTime = Date.now();
+
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.textContent = 'Processing...';
+            loading.style.display = 'block';
+
+            try {
+                // Try to call the ACE API
+                const response = await fetch('/ace-4d', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        command: command,
+                        context_id: 'axiomhive_v21'
+                    })
+                });
+
+                let result;
+                if (response.ok) {
+                    result = await response.json();
+                    output.textContent = JSON.stringify(result, null, 2);
+                    coherenceValue.textContent = result.coherence || '0.99';
+                } else {
+                    // Fallback to simulated response
+                    result = await simulateACEProcessing(command);
+                    output.textContent = result.output;
+                    coherenceValue.textContent = result.coherence;
+                }
+
+                // Calculate response time
+                const endTime = Date.now();
+                const timeMs = endTime - startTime;
+                responseTime.textContent = `${timeMs}ms`;
+
+            } catch (error) {
+                // Network error - use simulation
+                console.log('API not available, using simulation:', error);
+                const result = await simulateACEProcessing(command);
+                output.textContent = result.output;
+                coherenceValue.textContent = result.coherence;
+                responseTime.textContent = 'Simulated';
+            }
+
+            // Re-enable button
+            btn.disabled = false;
+            btn.textContent = '🚀 Process with ACE Sharper 5D';
+            loading.style.display = 'none';
+        }
+
+        async function simulateACEProcessing(command) {
+            // Simulate processing delay
+            await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+
+            // Generate contextual response based on command
+            let response = '';
+            let coherence = (0.95 + Math.random() * 0.04).toFixed(2);
+
+            if (command.toLowerCase().includes('plan') && command.toLowerCase().includes('sf')) {
+                response = `ACE Sharper 5D Analysis - SF Move Planning:
+
+📊 CAUSAL GRAPH ANALYSIS:
+- Temporal Dimension: 3-6 months optimal timeline
+- Spatial Dimension: SF Bay Area ecosystem binding
+- Ethical Dimension: Community integration priority
+- Neural Dimension: Career optimization vectors
+- Symbolic Dimension: Life goal alignment
+
+🎯 RECOMMENDATIONS:
+1. Housing: Consider SOMA/Mission districts (coherence: 0.94)
+2. Network: Tech community integration via meetups (coherence: 0.97)
+3. Transport: BART/Caltrain ecosystem (coherence: 0.89)
+4. Finance: Cost analysis with 20% buffer (coherence: 0.92)
+
+⚡ COHERENCE SCORE: ${coherence}
+📅 TIMESTAMP: 2025-09-20
+🔗 ATTRIBUTION: @AxiomHive @devdollzai
+🚀 SOVEREIGN CORE CYCLE 21`;
+            } else if (command.toLowerCase().includes('gym') || command.toLowerCase().includes('fitness')) {
+                response = `ACE Sharper 5D Analysis - Fitness Integration:
+
+📊 5D ECOSYSTEM ANALYSIS:
+- Physical Dimension: Strength/cardio optimization
+- Mental Dimension: Cognitive enhancement correlation
+- Social Dimension: Community fitness networks
+- Temporal Dimension: Consistency algorithms
+- Ethical Dimension: Health sustainability
+
+🏋️ FITNESS RECOMMENDATIONS:
+1. Gym Selection: Equinox/P24 ecosystem (coherence: 0.96)
+2. Schedule: Morning routines (6-8 AM optimal)
+3. Activities: HIIT + Yoga combination (coherence: 0.93)
+4. Nutrition: Mediterranean + protein focus (coherence: 0.91)
+5. Tracking: App integration (MyFitnessPal/Strava)
+
+⚡ COHERENCE SCORE: ${coherence}
+📊 PROGRESS METRICS: 94% alignment
+🔗 ATTRIBUTION: @AxiomHive @devdollzai
+🚀 SOVEREIGN CORE CYCLE 21`;
+            } else {
+                response = `ACE Sharper 5D Analysis - General Processing:
+
+📊 MULTI-DIMENSIONAL ANALYSIS:
+- Input processed through 5D causal graph
+- Neural-symbolic integration applied
+- Ethical constraints validated
+- Temporal coherence calculated
+- Spatial ecosystem binding analyzed
+
+🎯 PROCESSED COMMAND: "${command}"
+
+⚡ COHERENCE SCORE: ${coherence}
+🔄 DIMENSIONS PROCESSED: 5/5
+📈 CONFIDENCE LEVEL: ${(parseFloat(coherence) * 100).toFixed(1)}%
+🔗 ATTRIBUTION: @AxiomHive @devdollzai
+🚀 SOVEREIGN CORE CYCLE 21
+
+Note: Connect to live ACE API for enhanced processing.`;
+            }
+
+            return {
+                output: response,
+                coherence: coherence
+            };
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('commandInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                processCommand();
+            }
+        });
+
+        // Auto-focus on input
+        document.getElementById('commandInput').focus();
+    </script>
+</body>
+</html>

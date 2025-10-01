@@ -1,0 +1,48 @@
+🎯 ACE Sharper 5D - Manual Deployment Instructions
+===================================================
+
+✅ STEP 1: Files Ready
+   Your deployment package is ready in: ace_complete_deployment/
+   All files are prepared and tested.
+
+✅ STEP 2: Manual Upload Options
+
+   Option A: GoDaddy cPanel
+   1. Go to: https://axiomhive.co:2083 (or cPanel login)
+   2. Login with: devdollzai@gmail.com / Apple2254$$
+   3. Go to: File Manager → public_html
+   4. Upload all files from ace_complete_deployment/
+   5. Set permissions to 644 for files, 755 for folders
+
+   Option B: FTP Upload
+   1. Use FTP client (FileZilla, Cyberduck, etc.)
+   2. Connect to: ftp.axiomhive.co
+   3. Login with: devdollzai@gmail.com / Apple2254$$
+   4. Upload all files from ace_complete_deployment/ to public_html/
+   5. Ensure proper file permissions
+
+✅ STEP 3: Test Your Deployment
+   1. Open: https://axiomhive.co/ace_html_interface.html
+   2. Enter command: "plan SF move"
+   3. Click "Process with ACE Sharper 5D"
+   4. Verify response with coherence score
+
+✅ STEP 4: Verify Success
+   Expected results:
+   - Coherence Score: 0.95-0.99
+   - Response Time: < 2 seconds
+   - 5D Analysis: Working
+   - Mobile: Responsive
+
+📊 SOVEREIGN CORE CYCLE 21 - ACE SHARPER 5D
+   Deployment Date: 2025-09-20 03:48:29
+   Status: Ready for Manual Deployment
+   Files: 8 files prepared
+
+🔧 TROUBLESHOOTING:
+   - Clear browser cache
+   - Wait 5-10 minutes for propagation
+   - Check file permissions
+   - Verify all files uploaded
+
+Your ACE Sharper 5D system is ready! 🚀

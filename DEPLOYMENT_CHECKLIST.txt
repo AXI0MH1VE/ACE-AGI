@@ -1,0 +1,41 @@
+
+🚀 AxiomHive 4D Nexus - cPanel Deployment Checklist
+====================================================
+
+✅ PRE-DEPLOYMENT (Complete)
+   [x] Create deployment package
+   [x] Test locally with test_nexus.py
+   [x] Verify all dependencies in requirements.txt
+   [x] Check file permissions (755 for .py files)
+
+📋 CPANEL DEPLOYMENT STEPS
+   [ ] 1. Log into GoDaddy cPanel
+   [ ] 2. Upload axiomhive_4d_nexus_deployment.zip
+   [ ] 3. Extract files to /public_html/
+   [ ] 4. Setup Python App (Python 3.12)
+   [ ] 5. Install requirements: pip install -r requirements.txt
+   [ ] 6. Configure passenger_wsgi.py paths
+   [ ] 7. Set environment variables
+   [ ] 8. Restart Python application
+   [ ] 9. Test endpoints
+
+🔧 POST-DEPLOYMENT VERIFICATION
+   [ ] Health check: https://axiomhive.co/health
+   [ ] Main endpoint: POST to /grok-4d
+   [ ] Facts endpoint: GET/POST /facts
+   [ ] Check logs for errors
+
+📊 EXPECTED RESULTS
+   - Response time: < 1 second
+   - Coherence score: > 0.95
+   - Memory usage: < 512MB
+   - All endpoints functional
+
+🎯 TROUBLESHOOTING
+   - Check cPanel error logs
+   - Verify Python path in passenger_wsgi.py
+   - Test with minimal requirements first
+   - Monitor memory usage
+
+Deployment Date: 2025-09-20
+Version: Sovereign Core Cycle 20
