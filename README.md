@@ -1,137 +1,73 @@
-# Modern CV Website
+# 🧠 ACE-AGI: Auditable Cognitive Engine - Artificial General Intelligence
 
-A beautiful, responsive one-page CV website built with HTML5, CSS3, and vanilla JavaScript. Features modern design, smooth animations, particle effects, and interactive elements.
+**The Auditable Cognitive Engine (ACE) project, focused on developing a verifiable and transparent Artificial General Intelligence (AGI) framework.**
 
-## Features
-
-### 🎨 Design & UI
-- **Modern Dark Theme** with gradient accents
-- **Responsive Design** - works perfectly on all devices
-- **Smooth Animations** and micro-interactions
-- **Particle System** background effect
-- **Glassmorphism** effects with backdrop blur
-- **Gradient Text** and button effects
-
-### ⚡ Interactive Elements
-- **Animated Counters** for statistics
-- **Skill Progress Bars** with smooth animations
-- **Smooth Scrolling** navigation
-- **Mobile Menu** with hamburger animation
-- **Form Validation** with real-time feedback
-- **Hover Effects** on cards and buttons
-
-### 📱 Sections
-- **Hero Section** with animated avatar and social links
-- **About Section** with statistics and personal info
-- **Skills Section** with categorized progress bars
-- **Experience Timeline** with interactive cards
-- **Projects Showcase** with hover effects
-- **Contact Form** with validation
-- **Footer** with links and contact info
-
-## Technologies Used
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with Grid, Flexbox, and animations
-- **Vanilla JavaScript** - No frameworks, pure performance
-- **Font Awesome** - Beautiful icons
-- **Google Fonts** - Inter font family
-
-## Getting Started
-
-### Prerequisites
-- A modern web browser
-- A local web server (optional, but recommended for full functionality)
-
-### Installation
-
-1. **Clone or download** the project files
-2. **Open in browser** - Simply open `index.html` in your browser
-3. **Or use a local server** for better experience:
-
-```bash
-# Using Python 3
-python -m http.server 8000
-
-# Using Node.js (if you have http-server installed)
-npx http-server
-
-# Using PHP
-php -S localhost:8000
-```
-
-4. **Visit** `http://localhost:8000` in your browser
-
-## File Structure
-
-```
-├── index.html          # Main HTML file
-├── styles.css          # All CSS styles and animations
-├── script.js           # JavaScript functionality
-├── assets/             # Images and icons folder
-│   └── avatar.jpg      # Profile picture (add your own)
-├── TODO.md            # Development progress tracker
-└── README.md          # This file
-```
-
-## Customization
-
-### Personal Information
-Edit the HTML file to update:
-- Your name and title in the hero section
-- About section content
-- Skills and percentages
-- Work experience
-- Projects
-- Contact information
-- Social media links
-
-### Styling
-Modify `styles.css` to customize:
-- Color scheme (CSS variables at the top)
-- Fonts and typography
-- Spacing and layout
-- Animation timings
-- Responsive breakpoints
-
-### Functionality
-Update `script.js` to modify:
-- Animation parameters
-- Form validation rules
-- Particle system settings
-- Navigation behavior
-
-## Browser Support
-
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
-- ⚠️ Internet Explorer: Not supported (uses modern CSS features)
-
-## Performance Features
-
-- **Optimized Animations** using transform and opacity
-- **Debounced Scroll Events** for better performance
-- **Lazy Loading** ready for images
-- **Efficient Particle System** with canvas
-- **Minimal Dependencies** - only external resources are fonts and icons
-
-## Contributing
-
-Feel free to fork this project and submit pull requests for improvements!
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Credits
-
-- **Design Inspiration**: Modern portfolio websites
-- **Icons**: Font Awesome
-- **Fonts**: Google Fonts (Inter)
-- **Built with**: Vanilla HTML, CSS, and JavaScript
+ACE-AGI is the flagship project of the AxiomHive ecosystem, dedicated to building a cognitive architecture where every decision, inference, and data transformation is auditable and traceable. We reject black-box models in favor of a proof-driven approach to AGI development.
 
 ---
 
-**Made with ❤️ and lots of coffee**
+## ✨ Why ACE-AGI? (Value Proposition)
+
+*   **Transparency in AGI:** A commitment to making the internal workings of the cognitive engine fully visible and understandable.
+*   **Verifiable Intelligence:** Utilizing integrity tools (like Axiomhive-Leete) to cryptographically ensure the trustworthiness of the intelligence output.
+*   **Modular Design:** Built to integrate seamlessly with other AxiomHive components (LexLab, WIN) to form a complete, sovereign computing stack.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+*   [List of required dependencies, e.g., Python 3.x, specific libraries]
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/AXI0MH1VE/ACE-AGI.git
+cd ACE-AGI
+
+# Install dependencies (Example)
+pip install -r requirements.txt
+```
+
+### Running the Engine
+
+Refer to the `QUICK_START_GUIDE.txt` and `DEPLOYMENT_README.md` for detailed instructions on deploying and running the ACE engine.
+
+---
+
+## 🛠️ Core Components
+
+| Component | Description | Status |
+| :--- | :--- | :--- |
+| **Cognitive Core** | The central reasoning and decision-making unit of the AGI. | Development |
+| **Integrity Monitor** | Continuously validates the state and output of the core engine. | Stable |
+| **Deployment Scripts** | Various scripts for local, Heroku, and sovereign cycle deployments. | Stable |
+
+---
+
+## ⚠️ Note on Existing Files
+
+This repository contains several files related to a "CV website" (`index.html`, `styles.css`, etc.). These appear to be artifacts from a previous project or a separate component. The primary focus of this README is the **ACE-AGI** framework as indicated by the repository name and other files (`resolver.py`, `test_ace_nexus.py`).
+
+---
+
+## 🤝 Contribution
+
+We are seeking expert contributors in AGI, cognitive science, and verifiable computing.
+
+---
+
+## 📜 License
+
+This project is licensed under the [LICENSE file content, e.g., MIT License].
+
+---
+
+## 👤 Founder & Sustainer
+
+**Alexis Adams** – Founder, architect, and ongoing sustainer of the AxiomHive vision.
+*   GitHub: [@DevDollzAi](https://github.com/DevDollzAi)
+*   Website: [axiomhive.co](https://axiomhive.co)
+
