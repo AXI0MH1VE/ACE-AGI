@@ -10,7 +10,7 @@
 ![Demo](https://via.placeholder.com/800x400.png?text=ACE-AGI+Demo+GIF+Coming+Soon)
 
 ---
-
+**CREATED BY: NICHOLAS M. GROSSI**
 ## ✨ Why ACE-AGI? (Value Proposition)
 
 ACE-AGI is the flagship project of the AxiomHive ecosystem, dedicated to building a cognitive architecture where every decision, inference, and data transformation is auditable and traceable. We reject black-box models in favor of a proof-driven approach to AGI development.
